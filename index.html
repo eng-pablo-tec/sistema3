@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Super Front de Testes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    header button {
+      color: white;
+      background-color: #555;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    header button:hover {
+      background-color: #777;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    form input, form select, form textarea {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 300px;
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button onclick="mostrarSistema(1)">1. Cadastro Cliente</button>
+    <button onclick="mostrarSistema(2)">2. (em breve)</button>
+    <button onclick="mostrarSistema(3)">3. (em breve)</button>
+    <button onclick="mostrarSistema(4)">4. (em breve)</button>
+    <button onclick="mostrarSistema(5)">5. (em breve)</button>
+    <button onclick="mostrarSistema(6)">6. (em breve)</button>
+    <button onclick="mostrarSistema(7)">7. (em breve)</button>
+    <button onclick="mostrarSistema(8)">8. (em breve)</button>
+    <button onclick="mostrarSistema(9)">9. (em breve)</button>
+    <button onclick="mostrarSistema(10)">10. (em breve)</button>
+  </header>
+
+  <!-- SISTEMA 1: Cadastro de Cliente com 10 interações -->
+  <section id="sistema1" class="active">
+    <h2>Cadastro de Cliente</h2>
+    <form id="formCliente">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="cpf" placeholder="CPF" required>
+      <input type="tel" id="telefone" placeholder="Telefone" required>
+      <input type="date" id="nascimento" required>
+
+      <label for="genero">Gênero:</label>
+      <select id="genero" required>
+        <option value="">Selecione</option>
+        <option>Masculino</option>
+        <option>Feminino</option>
+      </select>
+
+      <input type="text" id="rua" placeholder="Rua" required>
+      <input type="text" id="numero" placeholder="Número" required>
+      <input type="text" id="cidade" placeholder="Cidade" required>
+      <input type="text" id="estado" placeholder="Estado" required>
+
+      <textarea id="obs" placeholder="Observações"></textarea>
+
+      <label>Tipo de Cliente:</label>
+      <select id="tipo" required>
+        <option value="">Selecione</option>
+        <option>Comum</option>
+        <option>VIP</option>
+        <option>Corporativo</option>
+      </select>
+
+      <label>
+        <input type="checkbox" id="termos"> Aceito os termos
+      </label>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <table id="tabelaClientes">
+      <thead>
+        <tr>
+          <th>Nome</th><th>Email</th><th>CPF</th><th>Telefone</th><th>Nasc.</th>
+          <th>Gênero</th><th>Endereço</th><th>Tipo</th><th>Obs</th><th>Termos</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Seções 2 a 10 entrarão nas próximas respostas -->
+<!-- SISTEMA 2: Estatísticas com 10 interações -->
+<section id="sistema2">
+  <h2>Análise Estatística</h2>
+  <p>Digite 10 números inteiros para calcular diversas estatísticas:</p>
+  <form id="formEstatistica">
+    <div id="inputsEstatistica">
+      <input type="number" placeholder="Número 1" required>
+      <input type="number" placeholder="Número 2" required>
+      <input type="number" placeholder="Número 3" required>
+      <input type="number" placeholder="Número 4" required>
+      <input type="number" placeholder="Número 5" required>
+      <input type="number" placeholder="Número 6" required>
+      <input type="number" placeholder="Número 7" required>
+      <input type="number" placeholder="Número 8" required>
+      <input type="number" placeholder="Número 9" required>
+      <input type="number" placeholder="Número 10" required>
+    </div>
+    <button type="submit">Calcular Estatísticas</button>
+  </form>
+
+  <div id="resultadosEstatistica" style="margin-top: 20px;"></div>
+</section>
+<section id="sistema3">
+  <h2>Agendamento de Serviços</h2>
+  <form id="formAgendamento">
+    <input type="text" id="cliente" placeholder="Nome do cliente" required>
+    
+    <label for="generoAgendamento">Gênero:</label>
+    <select id="generoAgendamento" required>
+      <option value="">Selecione</option>
+      <option>Masculino</option>
+      <option>Feminino</option>
+    </select>
+    
+    <label for="servico">Serviço:</label>
+    <select id="servico" required>
+      <option value="">Selecione</option>
+      <option>Corte de Cabelo</option>
+      <option>Manicure</option>
+      <option>Massagem</option>
+      <option>Barbearia</option>
+      <option>Design de Sobrancelha</option>
+    </select>
+
+    <label for="profissional">Profissional:</label>
+    <select id="profissional" required>
+      <option value="">Selecione</option>
+      <option>João</option>
+      <option>Maria</option>
+      <option>Lucas</option>
+      <option>Ana</option>
+      <option>Pedro</option>
+    </select>
+
+    <label for="data">Data do agendamento:</label>
+    <input type="date" id="data" required>
+
+    <label for="hora">Hora do agendamento:</label>
+    <select id="hora" required>
+      <option value="">Selecione</option>
+      <option>09:00</option>
+      <option>10:00</option>
+      <option>11:00</option>
+      <option>13:00</option>
+      <option>14:00</option>
+      <option>15:00</option>
+      <option>16:00</option>
+    </select>
+
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes" placeholder="Observações adicionais"></textarea>
+
+    <button type="submit">Agendar</button>
+  </form>
+
+  <table id="tabelaAgendamentos">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Gênero</th>
+        <th>Serviço</th>
+        <th>Profissional</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Observações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+<section id="sistema4">
+  <h2>Simulador de Financiamento</h2>
+  <form id="formFinanciamento">
+    <label for="valor">Valor do financiamento (R$):</label>
+    <input type="number" id="valor" min="1000" step="100" required>
+
+    <label for="taxa">Taxa de juros mensal (%):</label>
+    <input type="number" id="taxa" min="0" step="0.01" required>
+
+    <label for="parcelas">Número de parcelas:</label>
+    <input type="number" id="parcelas" min="1" max="60" required>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <div id="resultadoFinanciamento" style="margin-top:20px;"></div>
+</section>
+<section id="sistema5">
+  <h2>Estatística de Desempenho</h2>
+  <form id="formDesempenho">
+    <label>Digite as notas de 5 categorias (0 a 100):</label>
+    <input type="number" id="cat1" min="0" max="100" required placeholder="Categoria 1">
+    <input type="number" id="cat2" min="0" max="100" required placeholder="Categoria 2">
+    <input type="number" id="cat3" min="0" max="100" required placeholder="Categoria 3">
+    <input type="number" id="cat4" min="0" max="100" required placeholder="Categoria 4">
+    <input type="number" id="cat5" min="0" max="100" required placeholder="Categoria 5">
+    <button type="submit">Mostrar Gráfico</button>
+  </form>
+
+  <canvas id="graficoDesempenho" width="500" height="300" style="margin-top:20px; border:1px solid #ccc;"></canvas>
+</section>
+<section id="sistema6">
+  <h2>Calculadora de Impostos (ICMS e ISS)</h2>
+
+  <form id="formImpostos">
+    <label>Valor do serviço/produto (R$):</label><br>
+    <input type="number" id="valor" min="0" step="0.01" required placeholder="Ex: 1000"><br><br>
+
+    <label>Tipo de imposto:</label><br>
+    <select id="tipoImposto" required>
+      <option value="" disabled selected>Escolha o imposto</option>
+      <option value="icms">ICMS</option>
+      <option value="iss">ISS</option>
+    </select><br><br>
+
+    <label>Alíquota (%):</label><br>
+    <input type="number" id="aliquota" min="0" max="100" step="0.01" required placeholder="Ex: 18"><br><br>
+
+    <label>Outras despesas (R$):</label><br>
+    <input type="number" id="despesas" min="0" step="0.01" value="0"><br><br>
+
+    <button type="submit">Calcular Imposto</button>
+  </form>
+
+  <div id="resultado" style="margin-top:20px; font-weight:bold;"></div>
+</section>
+<section id="sistema7">
+  <h2>Formulário de Matrícula</h2>
+
+  <form id="formMatricula">
+    <label>Nome completo:</label><br>
+    <input type="text" id="nome" required placeholder="Digite seu nome"><br><br>
+
+    <label>Gênero:</label><br>
+    <select id="genero" required>
+      <option value="" disabled selected>Escolha o gênero</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select><br><br>
+
+    <label>Curso desejado:</label><br>
+    <select id="curso" required>
+      <option value="" disabled selected>Selecione o curso</option>
+      <option value="informatica">Informática</option>
+      <option value="administracao">Administração</option>
+      <option value="design">Design</option>
+    </select><br><br>
+
+    <label>Turno:</label><br>
+    <select id="turno" required>
+      <option value="" disabled selected>Selecione o turno</option>
+      <option value="manha">Manhã</option>
+      <option value="tarde">Tarde</option>
+      <option value="noite">Noite</option>
+    </select><br><br>
+
+    <button type="submit">Confirmar Matrícula</button>
+  </form>
+
+  <div id="resumoMatricula" style="margin-top:20px; font-weight:bold;"></div>
+</section>
+<section id="sistema8">
+  <h2>Simulador de Orçamento para Eventos</h2>
+
+  <form id="formOrcamento">
+    <label>Tipo de evento:</label><br>
+    <select id="tipoEvento" required>
+      <option value="" disabled selected>Selecione o tipo</option>
+      <option value="casamento">Casamento</option>
+      <option value="aniversario">Aniversário</option>
+      <option value="corporativo">Corporativo</option>
+    </select><br><br>
+
+    <label>Quantidade de convidados:</label><br>
+    <input type="number" id="convidados" min="1" required placeholder="Número de convidados"><br><br>
+
+    <label>Buffet:</label><br>
+    <select id="buffet" required>
+      <option value="" disabled selected>Selecione o buffet</option>
+      <option value="basico">Básico (R$50 por convidado)</option>
+      <option value="premium">Premium (R$100 por convidado)</option>
+      <option value="luxo">Luxo (R$150 por convidado)</option>
+    </select><br><br>
+
+    <label>Decoração:</label><br>
+    <select id="decoracao" required>
+      <option value="" disabled selected>Selecione a decoração</option>
+      <option value="simples">Simples (R$500)</option>
+      <option value="completa">Completa (R$1500)</option>
+      <option value="luxo">Luxo (R$3000)</option>
+    </select><br><br>
+
+    <button type="submit">Calcular Orçamento</button>
+  </form>
+
+  <div id="resultadoOrcamento" style="margin-top:20px; font-weight:bold;"></div>
+</section>
+
+<section id="sistema9">
+  <h2>Avaliação de Produto</h2>
+
+  <form id="formAvaliacao">
+    <label>Nota (1 a 5 estrelas):</label><br>
+    <select id="nota" required>
+      <option value="" disabled selected>Selecione a nota</option>
+      <option value="1">1 estrela</option>
+      <option value="2">2 estrelas</option>
+      <option value="3">3 estrelas</option>
+      <option value="4">4 estrelas</option>
+      <option value="5">5 estrelas</option>
+    </select><br><br>
+
+    <label>Comentário:</label><br>
+    <textarea id="comentario" rows="4" cols="40" placeholder="Escreva seu comentário aqui" required></textarea><br><br>
+
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+
+  <h3>Avaliações:</h3>
+  <div id="avaliacoesRecebidas" style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px;"></div>
+</section>
+<section id="sistema10">
+  <h2>Relatório de Produtividade Mensal</h2>
+
+  <form id="formProdutividade">
+    <label for="mes">Mês:</label><br>
+    <input type="month" id="mes" required><br><br>
+
+    <label for="meta">Meta (ex: 100 vendas):</label><br>
+    <input type="text" id="meta" placeholder="Ex: 100 vendas" required><br><br>
+
+    <label for="realizado">Realizado (ex: 80 vendas):</label><br>
+    <input type="text" id="realizado" placeholder="Ex: 80 vendas" required><br><br>
+
+    <button type="submit">Adicionar Relatório</button>
+  </form>
+
+  <h3>Relatórios cadastrados:</h3>
+  <div id="relatorios" style="border-top:1px solid #ccc; margin-top:10px; padding-top:10px;"></div>
+</section>
+
+<script>
+  const relatorios = [];
+
+  document.getElementById("formProdutividade").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const mes = document.getElementById("mes").value;
+    const meta = document.getElementById("meta").value.trim();
+    const realizado = document.getElementById("realizado").value.trim();
+
+    if (!mes || !meta || !realizado) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+
+    // Extrair números para cálculo (assumindo que meta e realizado terminam com texto)
+    const numMeta = parseFloat(meta);
+    const numRealizado = parseFloat(realizado);
+
+    if (isNaN(numMeta) || isNaN(numRealizado)) {
+      alert("Meta e Realizado devem conter números no início.");
+      return;
+    }
+
+    const percentual = ((numRealizado / numMeta) * 100).toFixed(1);
+
+    relatorios.push({ mes, meta, realizado, percentual });
+
+    // Limpar formulário
+    document.getElementById("mes").value = "";
+    document.getElementById("meta").value = "";
+    document.getElementById("realizado").value = "";
+
+    mostrarRelatorios();
+  });
+
+  function mostrarRelatorios() {
+    const container = document.getElementById("relatorios");
+    container.innerHTML = "";
+
+    for (const rel of relatorios) {
+      const dataFormatada = new Date(rel.mes + "-01").toLocaleDateString('pt-BR', { year: 'numeric', month: 'long' });
+      const div = document.createElement("div");
+      div.style.borderBottom = "1px solid #eee";
+      div.style.marginBottom = "10px";
+      div.style.paddingBottom = "10px";
+
+      div.innerHTML = `
+        <strong>${dataFormatada}</strong><br>
+        Meta: ${rel.meta}<br>
+        Realizado: ${rel.realizado}<br>
+        Cumprimento: ${rel.percentual}%<br>
+      `;
+      container.appendChild(div);
+    }
+  }
+</script>
+
+<script>
+  const avaliacoes = [];
+
+  document.getElementById("formAvaliacao").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nota = document.getElementById("nota").value;
+    const comentario = document.getElementById("comentario").value.trim();
+
+    if (!nota || comentario.length === 0) {
+      alert("Por favor, preencha nota e comentário.");
+      return;
+    }
+
+    avaliacoes.push({ nota: parseInt(nota), comentario });
+
+    // Limpar formulário
+    document.getElementById("nota").value = "";
+    document.getElementById("comentario").value = "";
+
+    mostrarAvaliacoes();
+  });
+
+  function mostrarAvaliacoes() {
+    const container = document.getElementById("avaliacoesRecebidas");
+    container.innerHTML = "";
+
+    for (const av of avaliacoes) {
+      const estrelas = "⭐".repeat(av.nota) + "☆".repeat(5 - av.nota);
+      const div = document.createElement("div");
+      div.style.borderBottom = "1px solid #eee";
+      div.style.marginBottom = "10px";
+      div.style.paddingBottom = "10px";
+
+      div.innerHTML = `<div>${estrelas}</div><div>${av.comentario}</div>`;
+      container.appendChild(div);
+    }
+  }
+</script>
+
+
+<script>
+  document.getElementById("formOrcamento").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const tipoEvento = document.getElementById("tipoEvento").value;
+    const convidados = parseInt(document.getElementById("convidados").value);
+    const buffet = document.getElementById("buffet").value;
+    const decoracao = document.getElementById("decoracao").value;
+
+    if (!tipoEvento || !convidados || convidados < 1 || !buffet || !decoracao) {
+      alert("Preencha todos os campos corretamente.");
+      return;
+    }
+
+    let valorBuffet = 0;
+    if (buffet === "basico") valorBuffet = 50;
+    else if (buffet === "premium") valorBuffet = 100;
+    else if (buffet === "luxo") valorBuffet = 150;
+
+    let valorDecoracao = 0;
+    if (decoracao === "simples") valorDecoracao = 500;
+    else if (decoracao === "completa") valorDecoracao = 1500;
+    else if (decoracao === "luxo") valorDecoracao = 3000;
+
+    const total = convidados * valorBuffet + valorDecoracao;
+
+    const texto = `
+      Orçamento para ${tipoEvento.charAt(0).toUpperCase() + tipoEvento.slice(1)}:<br>
+      - Convidados: ${convidados}<br>
+      - Buffet: R$${(convidados * valorBuffet).toFixed(2)}<br>
+      - Decoração: R$${valorDecoracao.toFixed(2)}<br>
+      <strong>Total estimado: R$${total.toFixed(2)}</strong>
+    `;
+
+    document.getElementById("resultadoOrcamento").innerHTML = texto;
+  });
+</script>
+
+<script>
+  document.getElementById("formMatricula").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const genero = document.getElementById("genero").value;
+    const curso = document.getElementById("curso").value;
+    const turno = document.getElementById("turno").value;
+
+    if (!nome || !genero || !curso || !turno) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+
+    const resumo = `
+      <p>Nome: ${nome}</p>
+      <p>Gênero: ${genero.charAt(0).toUpperCase() + genero.slice(1)}</p>
+      <p>Curso: ${curso.charAt(0).toUpperCase() + curso.slice(1)}</p>
+      <p>Turno: ${turno.charAt(0).toUpperCase() + turno.slice(1)}</p>
+      <p><strong>Matrícula confirmada com sucesso!</strong></p>
+    `;
+
+    document.getElementById("resumoMatricula").innerHTML = resumo;
+
+    // opcional: limpar formulário
+    this.reset();
+  });
+</script>
+
+<script>
+  document.getElementById("formImpostos").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Pega valores do formulário
+    const valor = parseFloat(document.getElementById("valor").value);
+    const tipo = document.getElementById("tipoImposto").value;
+    const aliquota = parseFloat(document.getElementById("aliquota").value);
+    const despesas = parseFloat(document.getElementById("despesas").value);
+
+    // Validações simples
+    if (isNaN(valor) || valor < 0) {
+      alert("Informe um valor válido para o serviço/produto.");
+      return;
+    }
+    if (!tipo) {
+      alert("Escolha o tipo de imposto.");
+      return;
+    }
+    if (isNaN(aliquota) || aliquota < 0 || aliquota > 100) {
+      alert("Informe uma alíquota válida (0 a 100%).");
+      return;
+    }
+    if (isNaN(despesas) || despesas < 0) {
+      alert("Informe despesas válidas.");
+      return;
+    }
+
+    // Cálculo do imposto conforme tipo
+    // ICMS: imposto sobre produto, base = valor + despesas
+    // ISS: imposto sobre serviço, base = valor (despesas não entram)
+    let baseCalculo;
+    if (tipo === "icms") {
+      baseCalculo = valor + despesas;
+    } else if (tipo === "iss") {
+      baseCalculo = valor;
+    }
+
+    const valorImposto = baseCalculo * (aliquota / 100);
+    const total = valor + valorImposto + despesas;
+
+    // Exibe resultado
+    const resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.innerHTML =
+      `<p>Base de cálculo: R$ ${baseCalculo.toFixed(2)}</p>` +
+      `<p>Valor do imposto (${tipo.toUpperCase()} - ${aliquota.toFixed(2)}%): R$ ${valorImposto.toFixed(2)}</p>` +
+      `<p>Outras despesas: R$ ${despesas.toFixed(2)}</p>` +
+      `<p><strong>Valor total a pagar: R$ ${total.toFixed(2)}</strong></p>`;
+  });
+</script>
+
+<script>
+  document.getElementById("formDesempenho").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const ctx = document.getElementById("graficoDesempenho").getContext("2d");
+    ctx.clearRect(0, 0, 500, 300);
+
+    const valores = [
+      parseFloat(document.getElementById("cat1").value),
+      parseFloat(document.getElementById("cat2").value),
+      parseFloat(document.getElementById("cat3").value),
+      parseFloat(document.getElementById("cat4").value),
+      parseFloat(document.getElementById("cat5").value),
+    ];
+
+    const categorias = ["Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5"];
+    const larguraBarra = 70;
+    const espacamento = 30;
+    const maxAltura = 250;
+
+    // Desenha barras
+    valores.forEach((valor, i) => {
+      const altura = (valor / 100) * maxAltura;
+      const x = espacamento + i * (larguraBarra + espacamento);
+      const y = 300 - altura;
+
+      // Barra
+      ctx.fillStyle = "#4287f5";
+      ctx.fillRect(x, y, larguraBarra, altura);
+
+      // Texto valor
+      ctx.fillStyle = "#000";
+      ctx.font = "14px Arial";
+      ctx.fillText(valor.toFixed(0), x + 20, y - 10);
+
+      // Texto categoria
+      ctx.fillText(categorias[i], x + 10, 290);
+    });
+
+    // Eixo Y
+    ctx.beginPath();
+    ctx.moveTo(espacamento / 2, 50);
+    ctx.lineTo(espacamento / 2, 300);
+    ctx.stroke();
+
+    // Eixo X
+    ctx.beginPath();
+    ctx.moveTo(espacamento / 2, 300);
+    ctx.lineTo(500, 300);
+    ctx.stroke();
+  });
+</script>
+
+<script>
+  document.getElementById("formFinanciamento").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const valor = parseFloat(document.getElementById("valor").value);
+    const taxa = parseFloat(document.getElementById("taxa").value) / 100;
+    const parcelas = parseInt(document.getElementById("parcelas").value);
+
+    // Fórmula da parcela fixa: P = V * (i * (1 + i)^n) / ((1 + i)^n - 1)
+    const parcela = valor * (taxa * Math.pow(1 + taxa, parcelas)) / (Math.pow(1 + taxa, parcelas) - 1);
+
+    const totalPago = parcela * parcelas;
+
+    const resultadoHTML = `
+      <p>Valor da parcela mensal: R$ ${parcela.toFixed(2)}</p>
+      <p>Total pago ao final: R$ ${totalPago.toFixed(2)}</p>
+    `;
+
+    document.getElementById("resultadoFinanciamento").innerHTML = resultadoHTML;
+  });
+</script>
+
+<script>
+  document.getElementById("formAgendamento").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const cliente = document.getElementById("cliente").value;
+    const genero = document.getElementById("generoAgendamento").value;
+    const servico = document.getElementById("servico").value;
+    const profissional = document.getElementById("profissional").value;
+    const data = document.getElementById("data").value;
+    const hora = document.getElementById("hora").value;
+    const observacoes = document.getElementById("observacoes").value;
+
+    const linha = `
+      <tr>
+        <td>${cliente}</td>
+        <td>${genero}</td>
+        <td>${servico}</td>
+        <td>${profissional}</td>
+        <td>${data}</td>
+        <td>${hora}</td>
+        <td>${observacoes}</td>
+      </tr>
+    `;
+
+    document.querySelector("#tabelaAgendamentos tbody").innerHTML += linha;
+    this.reset();
+  });
+</script>
+
+
+  <script>
+    function mostrarSistema(n) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      const ativo = document.getElementById("sistema" + n);
+      if (ativo) ativo.classList.add("active");
+    }
+
+    document.getElementById("formCliente").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const cpf = document.getElementById("cpf").value;
+      const telefone = document.getElementById("telefone").value;
+      const nascimento = document.getElementById("nascimento").value;
+      const genero = document.getElementById("genero").value;
+      const rua = document.getElementById("rua").value;
+      const numero = document.getElementById("numero").value;
+      const cidade = document.getElementById("cidade").value;
+      const estado = document.getElementById("estado").value;
+      const obs = document.getElementById("obs").value;
+      const tipo = document.getElementById("tipo").value;
+      const termos = document.getElementById("termos").checked ? "Sim" : "Não";
+      const endereco = `${rua}, ${numero} - ${cidade}/${estado}`;
+
+      const linha = `
+        <tr>
+          <td>${nome}</td>
+          <td>${email}</td>
+          <td>${cpf}</td>
+          <td>${telefone}</td>
+          <td>${nascimento}</td>
+          <td>${genero}</td>
+          <td>${endereco}</td>
+          <td>${tipo}</td>
+          <td>${obs}</td>
+          <td>${termos}</td>
+        </tr>`;
+
+      document.querySelector("#tabelaClientes tbody").innerHTML += linha;
+      this.reset();
+    });
+    document.getElementById("formEstatistica").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const inputs = document.querySelectorAll("#inputsEstatistica input");
+  const numeros = Array.from(inputs).map(input => parseFloat(input.value)).filter(n => !isNaN(n));
+
+  if (numeros.length !== 10) {
+    alert("Preencha todos os 10 números corretamente.");
+    return;
+  }
+
+  const soma = numeros.reduce((a, b) => a + b, 0);
+  const media = soma / numeros.length;
+  const ordenados = [...numeros].sort((a, b) => a - b);
+  const mediana = (ordenados[4] + ordenados[5]) / 2;
+  const minimo = Math.min(...numeros);
+  const maximo = Math.max(...numeros);
+  const variancia = numeros.reduce((a, b) => a + Math.pow(b - media, 2), 0) / numeros.length;
+  const desvioPadrao = Math.sqrt(variancia);
+  const pares = numeros.filter(n => n % 2 === 0);
+  const impares = numeros.filter(n => n % 2 !== 0);
+
+  document.getElementById("resultadosEstatistica").innerHTML = `
+    <h3>Resultados:</h3>
+    <ul>
+      <li><strong>Soma:</strong> ${soma}</li>
+      <li><strong>Média:</strong> ${media.toFixed(2)}</li>
+      <li><strong>Mediana:</strong> ${mediana}</li>
+      <li><strong>Mínimo:</strong> ${minimo}</li>
+      <li><strong>Máximo:</strong> ${maximo}</li>
+      <li><strong>Variância:</strong> ${variancia.toFixed(2)}</li>
+      <li><strong>Desvio Padrão:</strong> ${desvioPadrao.toFixed(2)}</li>
+      <li><strong>Ordenados:</strong> ${ordenados.join(", ")}</li>
+      <li><strong>Pares:</strong> ${pares.join(", ")}</li>
+      <li><strong>Ímpares:</strong> ${impares.join(", ")}</li>
+    </ul>
+  `;
+});
+
+  </script>
+
+</body>
+</html>
