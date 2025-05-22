@@ -1,31 +1,31 @@
 body {
   font-family: 'Arial Black', Gadget, sans-serif;
-  background: radial-gradient(circle at center, #000000 0%, #1a1a1a 80%);
-  color: #FFD700; /* dourado */
+  background: radial-gradient(circle at center, #001f3f 0%, #000814 80%);
+  color: #ff4c4c; /* vermelho forte */
   margin: 0;
   padding: 0;
 }
 
 header {
-  background: linear-gradient(90deg, #000000, #333300, #000000);
+  background: linear-gradient(90deg, #000814, #001f3f, #000814);
   padding: 15px 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  box-shadow: 0 0 15px #FFD700;
-  border-bottom: 3px solid #FFD700;
+  box-shadow: 0 0 15px #ff4c4c;
+  border-bottom: 3px solid #ff4c4c;
 }
 
 header button {
-  background: linear-gradient(145deg, #b8860b, #ffd700);
-  border: 2px solid #daa520;
-  color: #000;
+  background: linear-gradient(145deg, #005f99, #00aaff);
+  border: 2px solid #ff4c4c;
+  color: #fff;
   font-weight: 900;
   padding: 12px 24px;
   cursor: pointer;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7);
+  box-shadow: 0 4px 10px rgba(255, 76, 76, 0.8);
   transition: all 0.3s ease;
   text-shadow: 1px 1px 2px #000;
   min-width: 140px;
@@ -34,21 +34,21 @@ header button {
 
 header button:hover,
 header button:focus {
-  background: linear-gradient(145deg, #ffd700, #fffacd);
-  color: #333;
-  box-shadow: 0 0 20px #fffacd;
+  background: linear-gradient(145deg, #00aaff, #66ccff);
+  color: #000;
+  box-shadow: 0 0 20px #ff4c4c;
   transform: scale(1.05);
 }
 
 section {
-  background: #111111;
-  border: 2px solid #daa520;
+  background: #001f3f;
+  border: 2px solid #ff4c4c;
   border-radius: 10px;
   margin: 20px auto;
   padding: 20px;
   max-width: 900px;
-  box-shadow: 0 0 25px #ffd700;
-  color: #fffacd;
+  box-shadow: 0 0 25px #ff4c4c;
+  color: #ffffffcc;
 }
 
 h2 {
@@ -58,10 +58,10 @@ h2 {
 }
 
 form input, form select, form textarea {
-  background: #222;
-  border: 2px solid #b8860b;
+  background: #003366;
+  border: 2px solid #ff4c4c;
   border-radius: 6px;
-  color: #ffd700;
+  color: #fff;
   padding: 10px;
   margin: 10px 0;
   width: 300px;
@@ -73,31 +73,31 @@ form input, form select, form textarea {
 form input:focus,
 form select:focus,
 form textarea:focus {
-  border-color: #fffacd;
+  border-color: #66ccff;
   outline: none;
-  box-shadow: 0 0 10px #fffacd;
-  background: #333;
-  color: #fffacd;
+  box-shadow: 0 0 10px #66ccff;
+  background: #005f99;
+  color: #fff;
 }
 
 button[type="submit"] {
-  background: linear-gradient(145deg, #ffd700, #b8860b);
-  border: 2px solid #daa520;
-  color: #000;
+  background: linear-gradient(145deg, #ff4c4c, #cc0000);
+  border: 2px solid #aa0000;
+  color: #fff;
   font-weight: 900;
   padding: 12px 28px;
   cursor: pointer;
   border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.9);
+  box-shadow: 0 6px 15px rgba(255, 76, 76, 0.9);
   transition: all 0.3s ease;
   margin-top: 15px;
   text-shadow: 1px 1px 2px #000;
 }
 
 button[type="submit"]:hover {
-  background: linear-gradient(145deg, #fffacd, #ffd700);
-  color: #333;
-  box-shadow: 0 0 20px #fffacd;
+  background: linear-gradient(145deg, #ff6666, #ff0000);
+  color: #000;
+  box-shadow: 0 0 20px #ff4c4c;
   transform: scale(1.05);
 }
 
@@ -105,23 +105,23 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background: #222;
-  box-shadow: 0 0 10px #b8860b;
+  background: #003366;
+  box-shadow: 0 0 10px #ff4c4c;
   border-radius: 8px;
   overflow: hidden;
 }
 
 th, td {
-  border: 1px solid #b8860b;
+  border: 1px solid #ff4c4c;
   padding: 10px;
   text-align: left;
-  color: #fffacd;
+  color: #fff;
   font-weight: 700;
   text-shadow: 1px 1px 2px #000;
 }
 
 th {
-  background: #444400;
+  background: #660000;
   text-transform: uppercase;
 }
 
@@ -133,21 +133,21 @@ th {
 #resultadosEstatistica li {
   padding: 6px 0;
   font-weight: 700;
-  color: #ffd700;
+  color: #ff4c4c;
   text-shadow: 1px 1px 0 #000;
 }
 
-/* Scrollbar dourado */
+/* Scrollbar vermelho/azul */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: #001f3f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b8860b;
+  background: #ff4c4c;
   border-radius: 4px;
-  box-shadow: 0 0 5px #ffd700;
+  box-shadow: 0 0 5px #ff4c4c;
 }
