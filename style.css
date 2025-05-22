@@ -1,0 +1,108 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0a0a0a; /* Preto bem escuro */
+  color: #e6c27d; /* Dourado suave */
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #f2d078; /* Dourado mais claro */
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #bfa25e;
+  font-weight: 700;
+}
+
+section {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 2px solid #bfa25e;
+  border-radius: 10px;
+  padding: 20px 30px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 0 15px #bfa25eaa;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #d4af37; /* dourado médio */
+}
+
+input[type="text"],
+input[type="month"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+  border: 2px solid #bfa25e;
+  border-radius: 6px;
+  background-color: #1c1c1c;
+  color: #f0d88a;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="month"]:focus {
+  border-color: #f2d078;
+  outline: none;
+  box-shadow: 0 0 8px #f2d078;
+}
+
+button {
+  background-color: #bfa25e;
+  border: none;
+  padding: 12px 25px;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 10px #bfa25e;
+}
+
+button:hover {
+  background-color: #d4af37;
+  color: #111;
+  box-shadow: 0 0 15px #d4af37;
+}
+
+#relatorios {
+  margin-top: 15px;
+  color: #e6c27d;
+}
+
+#relatorios div {
+  background: linear-gradient(90deg, #292929, #1c1c1c);
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 0 5px #bfa25e66;
+  transition: background-color 0.3s ease;
+}
+
+#relatorios div:hover {
+  background: linear-gradient(90deg, #3d3a1f, #2e2a12);
+  box-shadow: 0 0 8px #f2d078aa;
+}
+
+strong {
+  color: #f2d078;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 15px 20px;
+  }
+  button {
+    width: 100%;
+  }
+}
